@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
@@ -23,12 +21,6 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
                 PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(randomX, y, randomZ), Quaternion.identity);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public override void OnJoinedRoom()
