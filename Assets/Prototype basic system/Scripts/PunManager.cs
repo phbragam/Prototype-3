@@ -118,7 +118,7 @@ public class PunManager : MonoBehaviourPunCallbacks
     public void OnClickStartGame()
     {
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        PhotonNetwork.LoadLevel("GameScene");
+        PhotonNetwork.LoadLevel("ForestQuest");
     }
 
     public void OnClickShowAvailableRooms()
