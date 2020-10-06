@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototype basic system/Scenes/PrototypeScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Prototype basic system/Scenes/GameScene.unity
     guid: d0314860f1ec1a64bb6e47a7bde60538
   - enabled: 1

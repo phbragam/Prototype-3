@@ -14,7 +14,7 @@ public class PlayFabManager : MonoBehaviour
     private string playerID;
     private string weaponData;
     private string receivedWeaponData;
-    private string receivedHtsData;
+    private string receivedMissionCompleteData;
     private string receivedDeathsData;
     public GameObject introPanel;
     public GameObject logInPanel;
@@ -182,10 +182,10 @@ public class PlayFabManager : MonoBehaviour
 
             receivedWeaponData = result.Data["Weapon"].Value;
 
-            if (result.Data.ContainsKey("Hits") && result.Data.ContainsKey("Deaths"))
+            if (result.Data.ContainsKey("MissionComplete") && result.Data.ContainsKey("Deaths"))
             {
-                Debug.Log("Hits and Deaths data obtained successfully");
-                receivedHtsData = result.Data["Hits"].Value;
+                Debug.Log("MissionComplete and Deaths data obtained successfully");
+                receivedMissionCompleteData = result.Data["MissionComplete"].Value;
                 receivedDeathsData = result.Data["Deaths"].Value;
             }
             else
@@ -199,7 +199,7 @@ public class PlayFabManager : MonoBehaviour
             ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
 
             hash.Add("Weapon", receivedWeaponData);
-            hash.Add("Hits", receivedHtsData);
+            hash.Add("MissionComplete", receivedMissionCompleteData);
             hash.Add("Deaths", receivedDeathsData);
 
             PhotonNetwork.SetPlayerCustomProperties(hash);
@@ -237,7 +237,7 @@ public class PlayFabManager : MonoBehaviour
         Dictionary<string, string> data = new Dictionary<string, string>()
         {
             {"Weapon", weaponData },
-            {"Hits", 0.ToString() },
+            {"MissionComplete", "NO" },
             {"Deaths", 0.ToString() }
         };
 
@@ -259,13 +259,13 @@ public class PlayFabManager : MonoBehaviour
         ActivateText(textNotification[5]);
     }
 
-    // I called if there is only WeaponData and no Hits/DeathsData
+    // I called if there is only WeaponData and no MissionComplete/DeathsData
     public void UpdateUserData()
     {
         Dictionary<string, string> data = new Dictionary<string, string>()
         {
             //{"Weapon", weaponData },
-            {"Hits", 0.ToString() },
+            {"MissionComplete", "NO" },
             {"Deaths", 0.ToString() }
         };
 

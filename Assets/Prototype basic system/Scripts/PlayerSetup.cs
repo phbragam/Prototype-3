@@ -70,7 +70,7 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
 
             STM.youText.text = "Player: " + PhotonNetwork.NickName;
             STM.weaponText.text = "Weapon: " + (string)photonView.Owner.CustomProperties["Weapon"];
-            STM.hitCountingText.text = "Hits: " + (string)photonView.Owner.CustomProperties["Hits"];
+            //STM.hitCountingText.text = "Hits: " + (string)photonView.Owner.CustomProperties["Hits"];
             STM.deathCountingText.text = "Deaths: " + (string)photonView.Owner.CustomProperties["Deaths"];
         }
     }

@@ -15,8 +15,8 @@ public class GameSceneManager : MonoBehaviourPunCallbacks
         {
             if (playerPrefab != null)
             {
-                int randomX = Random.Range(0, 50);
-                int randomZ = Random.Range(-10, 10);
+                int randomX = Random.Range(370, 400);
+                int randomZ = Random.Range(90, 110);
 
                 PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(randomX, y, randomZ), Quaternion.identity);
             }
