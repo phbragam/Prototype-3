@@ -49,11 +49,6 @@ public class GrannyMethodsScript : MonoBehaviourPunCallbacks
         gameObject.GetComponent<PhotonView>().RPC("ActivateDeactivatePlayerModel", RpcTarget.AllBuffered, false);
         ActivateDeactivateComponents(false);
 
-        //gameObject.GetComponent<AudioSource>().enabled = false;
-        //gameObject.GetComponent<Animator>().enabled = false;
-        //transform.GetComponent<GrannyControls>().enabled = false;
-        //transform.GetComponent<Rigidbody>().isKinematic = true;
-
         int randomX = Random.Range(370, 400);
         int randomZ = Random.Range(90, 110);
 
@@ -76,10 +71,6 @@ public class GrannyMethodsScript : MonoBehaviourPunCallbacks
         
         ActivateDeactivateComponents(true);
 
-        //gameObject.GetComponent<AudioSource>().enabled = true;
-        //gameObject.GetComponent<Animator>().enabled = true;
-        //transform.GetComponent<GrannyControls>().enabled = true;
-        //transform.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     [PunRPC]

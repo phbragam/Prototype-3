@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class QuestLocation : MonoBehaviour
+public class QuestLocation : MonoBehaviourPunCallbacks
 {
     // This code goes on a game object that represents the
     // task to be performed by the player at the location 
@@ -19,14 +20,17 @@ public class QuestLocation : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player") return;
 
-        // if we shouldn't be working on this event
-        // then don't register it as completed 
-        if (qEvent.status != QuestEvent.EventStatus.CURRENT) return;
+        if (collision.gameObject.GetComponent<PhotonView>().IsMine)
+        {
+            // if we shouldn't be working on this event
+            // then don't register it as completed 
+            if (qEvent.status != QuestEvent.EventStatus.CURRENT) return;
 
-        // inject these back into the Quest Manager to Update States
-        qEvent.UpdateQuestEvent(QuestEvent.EventStatus.DONE);
-        qButton.UpdateButton(QuestEvent.EventStatus.DONE);
-        qManager.UpdateQuestsOnCompletion(qEvent);
+            // inject these back into the Quest Manager to Update States
+            qEvent.UpdateQuestEvent(QuestEvent.EventStatus.DONE);
+            qButton.UpdateButton(QuestEvent.EventStatus.DONE);
+            qManager.UpdateQuestsOnCompletion(qEvent);
+        }
     }
 
     public void Setup(QuestManager qm, QuestEvent qe, QustButton qb)

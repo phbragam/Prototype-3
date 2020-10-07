@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class CompassController : MonoBehaviour
+public class CompassController : MonoBehaviourPunCallbacks
 {
     public GameObject pointer;
     public GameObject target;
@@ -13,6 +14,10 @@ public class CompassController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //if (player.GetComponent<PhotonView>().IsMine)
+        //{
+        //    rect = pointer.GetComponent<RectTransform>();
+        //}
         rect = pointer.GetComponent<RectTransform>();
     }
 

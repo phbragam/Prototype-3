@@ -26,6 +26,7 @@ public class GrannySetup : MonoBehaviourPunCallbacks
         {
             gameObject.GetComponent<GrannyControls>().enabled = true;
             playerCamera.SetActive(true);
+            GameObject.Find("Compass").GetComponent<CompassController>().player = gameObject;
         }
         else
         {
