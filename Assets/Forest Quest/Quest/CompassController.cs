@@ -14,10 +14,6 @@ public class CompassController : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        //if (player.GetComponent<PhotonView>().IsMine)
-        //{
-        //    rect = pointer.GetComponent<RectTransform>();
-        //}
         rect = pointer.GetComponent<RectTransform>();
     }
 

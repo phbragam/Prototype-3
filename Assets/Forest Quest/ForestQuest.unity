@@ -609,7 +609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -90}
+  m_AnchoredPosition: {x: 0, y: 226.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266427505
@@ -2540,6 +2540,8 @@ MonoBehaviour:
   buttonPrefab: {fileID: 6406815517469962985, guid: 2c9f0f91301cb1540b293b5d12d0476d,
     type: 3}
   victoryPopup: {fileID: 266427503}
+  compass: {fileID: 1199884388}
+  compassNeedle: {fileID: 1905108095}
   A: {fileID: 999445206}
   B: {fileID: 150465015}
   C: {fileID: 64051620}
